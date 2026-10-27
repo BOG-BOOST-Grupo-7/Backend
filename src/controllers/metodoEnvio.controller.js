@@ -52,7 +52,7 @@ export const crearMetodoEnvio = async (req, res) => {
             return res.status(400).json({ mensaje: "La descripción no puede superar los 255 caracteres." });
         }
 
-        if (costo_envio === undefined || costo_envio === null || costo_envio === "" || isNaN(costo_envio) || Number(costo_envio) < 0) {
+        if (costo_envio === undefined || costo_envio === null || costo_envio === "" || Number.isNaN(costo_envio) || Number(costo_envio) < 0) {
             return res.status(400).json({ mensaje: "El costo de envío debe ser un número mayor o igual a 0." });
         }
 
@@ -101,7 +101,7 @@ export const actualizarMetodoEnvio = async (req, res) => {
         if (!descripcion_metodo || descripcion_metodo.trim().length === 0) {
             return res.status(400).json({ mensaje: "La descripción es obligatoria." });
         }
-        if (costo_envio === undefined || isNaN(costo_envio) || Number(costo_envio) < 0) {
+        if (costo_envio === undefined || Number.isNaN(costo_envio) || Number(costo_envio) < 0) {
             return res.status(400).json({ mensaje: "El costo de envío debe ser un número mayor o igual a 0." });
         }
 
