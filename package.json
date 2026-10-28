@@ -1,7 +1,7 @@
 {
-  "name": "simulador-de-backend",
+  "name": "Backend_Bog-Boost",
   "version": "1.0.0",
-  "description": "este proyecto es un simulador de backend para el desarrollo de aplicaciones frontend.",
+  "description": "Backend para el sistema Bog-Boost",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -20,5 +20,10 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
+  },
+  "overrides": {
+    "json-server-auth": {
+      "jsonwebtoken": "^9.0.3"
+    }
   }
 }
