@@ -21,7 +21,10 @@ export const listarRoles = async (req, res) => {
 export const cambiarRolUsuario = async (req, res) => {
   try {
     
-    console.log("BODY:", req.body);
+    console.log({
+    message: "Solicitud para cambiar el rol.",
+    body: req.body
+    });
 
     const {
       id_perfil,
