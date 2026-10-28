@@ -23,6 +23,8 @@ import puestoRoutes from "./routes/puesto.routes.js";
 
 const app = express();
 
+app.disable("x-powered-by");
+
 app.use(cors({
     origin: "http://localhost:5173",
     credentials: true
