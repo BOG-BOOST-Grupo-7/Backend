@@ -2,6 +2,9 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 
+import swaggerUi from 'swagger-ui-express';
+import swaggerSpec from './config/swagger.js';
+
 import authRoutes from "./routes/auth.routes.js";
 import rolRoutes from "./routes/rol.routes.js";
 import tipoDocumentoRoutes from "./routes/tipoDocumento.routes.js";
@@ -33,6 +36,16 @@ app.use(cors({
 app.use(express.json());
 
 app.use(cookieParser());
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+    customSiteTitle: 'API Bog-Boost',
+    swaggerOptions: {
+        persistAuthorization: true, // Mantiene la cookie entre recargas
+        docExpansion: 'none',       // Colapsa los endpoints por defecto
+        filter: true,               // Añade un buscador
+        tagsSorter: 'alpha',        // Ordena las etiquetas alfabéticamente
+    }
+}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/roles", rolRoutes);
