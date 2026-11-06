@@ -20,10 +20,11 @@
     "swagger-jsdoc": "^6.3.0",
     "swagger-ui-express": "^5.0.1"
   },
-    "devDependencies": {
+  "devDependencies": {
     "nodemon": "^3.1.14"
   },
   "overrides": {
+    "@apidevtools/json-schema-ref-parser": "16.0.5",
     "json-server-auth": {
       "jsonwebtoken": "^9.0.3"
     },
